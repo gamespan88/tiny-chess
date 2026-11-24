@@ -24,3 +24,12 @@ move** — no clock, no randomness, fully deterministic and replayable.
 
 - `main.py` — the whole engine (packed; Python 3.13 standard library only).
 - `LICENSE` — MIT.
+
+## Engine
+
+The engine represents the board on a 0x88 grid and searches with negamax
+alpha-beta, a transposition table and quiescence search over captures,
+promotions and check evasions. Every move is computed under a fixed
+50,000-node budget with no clock and no randomness, so each game is fully
+deterministic and replays move for move. The committed `main.py` is packed
+from the readable `engine_src.py` with the make.fun kit's compress command.
